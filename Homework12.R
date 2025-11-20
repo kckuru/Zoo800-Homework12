@@ -86,7 +86,7 @@ new_lengths <- data.frame(
 )
 
 # Get predicted probabilities from the model
-new_lengths$predicted_prob <- predict(
+new_lengths$predicted_prob <- predict( 
   model,
   newdata = new_lengths,
   type = "response"   # converts log-odds to probability
@@ -96,8 +96,8 @@ new_lengths$predicted_prob <- predict(
 ggplot(females, aes(x = Length_at_capture, y = changed)) +
   geom_jitter(width = 0.5, height = 0.05, alpha = 0.4) + # jittered points for observed data
   geom_line(
-    data = new_lengths,
-    aes(x = Length_at_capture, y = predicted_prob),
+    data = new_lengths, # use new_lengths data for the line
+    aes(x = Length_at_capture, y = predicted_prob), 
     size = 1.2,
     color = "blue"
   ) + 
