@@ -35,7 +35,7 @@ n_total   <- nrow(females)
 
 n_changed; n_total 
 
-alpha <- 1 + n_changed               # number of successes
+alpha <- 1 + n_changed              # number of successes
 beta  <- 1 + (n_total - n_changed)  # number of failures
 
 x <- seq(0, 1, length.out = 500) # x values for plotting the posterior density; length.out is number of points
@@ -45,7 +45,7 @@ pdf_vals <- dbeta(x, alpha, beta) # posterior density values
 plot(x, pdf_vals, type = "l", lwd = 3,
      xlab = "Probability of sex change",
      ylab = "Beta posterior density",
-     main = "Posterior PDF for Probability of Sex Change (Females Recaptured After July)")
+     main = "Posterior Probability Density Function (PDF) for Probability of Sex Change (Females Recaptured After July)")
 
 # Objective 1b
 # 95% credible interval
